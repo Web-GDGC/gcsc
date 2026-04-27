@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db.js';
 import RaiseQuestRouter from './routes/RaiseQuestRouter.js';
+import NgoDetailRouter from './routes/NgoDetailRouter.js';
 import userRouter from './routes/userRoute.js';
 import 'dotenv/config' //include the .env file in the project
 
@@ -19,6 +20,9 @@ connectDB();
 
 //api endpoints
 app.use("/api/RaiseQuest", RaiseQuestRouter);
+
+//api for the ngo
+app.use("/api/ngoDetail", NgoDetailRouter);
 
 //this code serve to user authentication system
 //if /api/user come in the request then ask to userRoute for further requests
